@@ -1,24 +1,65 @@
-# README
+# **DB設計**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+## productsテーブル
 
-* System dependencies
+|Column|Type|Options|
+|------|----|-------|
+|name|text|null: false, unique:true|
+|description|text|null: false|
+|like_count|integer|
+|category_id|integer|
+### Association
+- belongs_to :category
+- belongs_to :user
+- has_many :likes, dependent: :destroy
+- has_many :images, dependent: :destroy
+- has_many :chats, dependent: :destroy
 
-* Configuration
 
-* Database creation
+## usersテーブル
 
-* Database initialization
+|Column|Type|Options|
+|------|----|-------|
+|name|text|null: false, unique:true|
+|e_mail|text|null: false , unique:true|
+|password|text|null :false|
+### Association
+- has_many :products, dependent: :destroy
+- has_many :chats, dependent: :destroy
+- has_many :likes, dependent: :destroy
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## chatsテーブル
 
-* ...
+|Column|Type|Options|
+|------|----|-------|
+|comment|text|null: false|
+|user_id|reference| foreign_key: true|
+|product_id|reference| foreign_key: true|
+### Association
+- belongs_to :product
+- belongs_to :user
+
+## imagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null: false|
+|product_id|reference|null: false, foreign_key: true|
+### Association
+- belongs_to :product
+- belongs_to :user
+
+
+## likesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|reference|foreign_key: true|
+|group_id|reference|foreign_key: true|
+### Association
+- belongs_to :product, counter_cache: :likes_count
+- belongs_to :user
