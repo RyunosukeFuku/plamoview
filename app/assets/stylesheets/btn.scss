@@ -1,0 +1,25 @@
+.footer-btn {
+  bottom: 32px;
+  right: 32px;
+  width: 140px;
+  height: 140px;
+  font-size: 25px;
+  position: fixed;
+  z-index: 1000;
+  border-radius: 15%;
+  background: lightskyblue;
+  color: black;
+  text-align: center;
+  &__name {
+    margin: 20px 0 0;
+  }
+  &__name:hover {
+	  color: blue;
+	  text-decoration: inherit;
+  }
+  .fa-camera-retro {
+    margin: 8px 0 0;
+    font-size: 60px;
+    color: white;
+  }
+}

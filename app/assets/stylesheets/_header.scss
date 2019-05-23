@@ -25,6 +25,10 @@
         border: solid 1px;
         cursor: pointer;
       }
+      .header__container__left__category:hover {
+	      color: white;
+	      text-decoration: inherit;
+      }
     }
     &__center {
       margin: auto;
@@ -50,16 +54,21 @@
             font-size:20px;
           }
         }
+        &__button:hover {
+	        color: yellow;
+	        text-decoration: inherit;
+        }
       }
     }
     &__right {
       height: 100%;
       width: 300px;
       float: right;
+      display: inline-block;
       position: relative;
       &__login {
         height: 38px;
-        width: 100%;
+        width: 142px;
         line-height: 38px;
         border: solid 1px;
         border-radius: 4px;
@@ -68,6 +77,26 @@
         position: absolute;
         bottom: 0;
       }
+      &__signin {
+        height: 38px;
+        width: 142px;
+        line-height: 38px;
+        border: solid 1px;
+        border-radius: 4px;
+        text-align: center;
+        cursor: pointer;
+        position: absolute;
+        bottom: 0;
+        left: 145px;
+      }
+    }
+    .header__container__right__login:hover {
+	    color: white;
+	    text-decoration: inherit;
+    }
+    .header__container__right__signin:hover {
+	    color: white;
+	    text-decoration: inherit;
     }
   }
 }
