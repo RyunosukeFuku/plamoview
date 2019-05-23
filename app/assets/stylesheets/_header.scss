@@ -1,0 +1,102 @@
+.header {
+  height: 150px;
+  width: 100%;
+  background-color: lightblue;
+  color:black;
+  &__container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    font-family: arial black;
+    &__left {
+      height: 100%;
+      width: 300px;
+      &__box {
+        height: 100px;
+        font-weight: bold;
+        font-size: 50px;
+        padding: 10px 0 0 20px;
+      }
+      &__category {
+        text-align: center;
+        height: 38px;
+        line-height: 38px;
+        border-radius: 4px;
+        border: solid 1px;
+        cursor: pointer;
+      }
+      .header__container__left__category:hover {
+	      color: white;
+	      text-decoration: inherit;
+      }
+    }
+    &__center {
+      margin: auto;
+      height: 45px;
+      width: 500px;
+      line-height: 145px;
+      &__search {
+        height: 100%;
+        &__input {
+          height: 45px;
+          width: 400px;
+          border-radius: 4px;
+        }
+        &__button {
+          width: 40px;
+          height: 45px;
+          border-radius: 4px;
+          border: solid 1px;
+          border-color: gray;
+          background-color: lightgray;
+          cursor: pointer;
+          &__icon {
+            font-size:20px;
+          }
+        }
+        &__button:hover {
+	        color: yellow;
+	        text-decoration: inherit;
+        }
+      }
+    }
+    &__right {
+      height: 100%;
+      width: 300px;
+      float: right;
+      display: inline-block;
+      position: relative;
+      &__login {
+        height: 38px;
+        width: 142px;
+        line-height: 38px;
+        border: solid 1px;
+        border-radius: 4px;
+        text-align: center;
+        cursor: pointer;
+        position: absolute;
+        bottom: 0;
+      }
+      &__signin {
+        height: 38px;
+        width: 142px;
+        line-height: 38px;
+        border: solid 1px;
+        border-radius: 4px;
+        text-align: center;
+        cursor: pointer;
+        position: absolute;
+        bottom: 0;
+        left: 145px;
+      }
+    }
+    .header__container__right__login:hover {
+	    color: white;
+	    text-decoration: inherit;
+    }
+    .header__container__right__signin:hover {
+	    color: white;
+	    text-decoration: inherit;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.header
+  .header__container
+    .header__container__left
+      .header__container__left__box
+        HOBY日報
+      .header__container__left__category
+        CATEGORY
+    .header__container__center
+      = form_tag('/search', method: :get, class: "header__container__center__search", enforce_utf8: false ) do
+        %input.header__container__center__search__input{name: "keyword", placeholder: "検索ワードを入力してください", type: "search", value: ""}/
+        %button.header__container__center__search__button
+          %i.fas.fa-search.header__container__center__search__button__icon
+    .header__container__right
+      .header__container__right__login
+        LOGIN
+      .header__container__right__signin
+        SIGNIN
