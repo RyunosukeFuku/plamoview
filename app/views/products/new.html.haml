@@ -1,0 +1,17 @@
+.new-product
+  .new-product__box
+    .new-product__box__main
+      記事投稿
+    = form_with url: root_path, html: { class: "new-product__box__main__form" } do |f|
+      %p 記事タイトル
+      = f.text_area :text, maxlength: "20", name: "text", placeholder: "タイトルを入力してください", type: "text", class: 'new-product__box__main__form__title'
+      %p 画像
+      = f.file_field :photo, name: "photo", type: "file", class: 'new-product__box__main__form__photo'
+      %p 記事文章
+      = f.text_area :text, maxlength: "150", name: "text", placeholder: "文章を入力してください", type: "text", class: 'new-product__box__main__form__text'
+      %p 日付入力
+      %input{type: "date", class: 'new-product__box__main__form__date' }
+      = f.submit '投稿する', class: 'new-product__box__main__form__submit'
+      .new-product__box__main__form__back
+        = link_to root_path do
+          TOPへもどる
