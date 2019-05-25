@@ -4,16 +4,17 @@
     .main__body__top
     .main__body__center
       .main__body__center__item
-        .main__body__center__item__photo
-          = image_tag ("donarudo.jpg"), class: 'main__body__center__item__photo__big'
-        .main__body__center__item__box
-          .main__body__center__item__box__name
-            .main__body__center__item__box__name__product
-              作品名
-            .main__body__center__item__box__name__user
-              ユーザー名
-          .main__body__center__item__box__like
-            イイね ♡ 0
+        = link_to product_path(1) do
+          .main__body__center__item__photo
+            = image_tag ("donarudo.jpg"), class: 'main__body__center__item__photo__big'
+          .main__body__center__item__box
+            .main__body__center__item__box__name
+              .main__body__center__item__box__name__product
+                作品名
+              .main__body__center__item__box__name__user
+                ユーザー名
+            .main__body__center__item__box__like
+              イイね ♡ 0
       .main__body__center__item
         .main__body__center__item__photo
           = image_tag ("donarudo.jpg"), class: 'main__body__center__item__photo__big'
