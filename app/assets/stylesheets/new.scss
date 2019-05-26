@@ -1,6 +1,8 @@
 .new-product {
   height: 100%;
   width: 100%;
+  background-color: #fafafa;
+  padding: 30px;
   &__box {
     height: 700px;
     width: 600px;
@@ -17,7 +19,7 @@
         margin: 0 auto;
         &__title {
           height: 25px;
-          width: 300px;
+          width: 350px;
           margin-bottom: 30px;
         }
         &__photo {
