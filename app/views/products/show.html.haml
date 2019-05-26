@@ -1,0 +1,19 @@
+= render partial: 'products/header'
+.show-product
+  .show-product__body
+    .show-product__body__header
+      記事タイトルドナルドマジック
+    .show-product__body__main
+      .show-product__body__main__photo
+        = image_tag ("donarudo.jpg"), class: 'show-product__body__main__photo__big'
+      .show-product__body__main__description
+        .show-product__body__main__description__box
+          .show-product__body__main__description__box__user
+            投稿者の名前
+          .show-product__body__main__description__box__date
+            投稿日
+        .show-product__body__main__description__text
+          説明文１５０字。今日は疲れたなぁ
+= render partial: 'products/footer'
+
+
