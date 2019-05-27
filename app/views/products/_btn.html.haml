@@ -1,4 +1,5 @@
-= link_to new_product_path, class: 'footer-btn' do
-  .footer-btn__name
-    投稿
-  %i.fas.fa-camera-retro
+- if user_signed_in?
+  = link_to new_product_path, class: 'footer-btn' do
+    .footer-btn__name
+      投稿
+    %i.fas.fa-camera-retro
