@@ -12,9 +12,17 @@
     -#     %button.header__container__center__search__button
     -#       %i.fas.fa-search.header__container__center__search__button__icon
     .header__container__right
-      .header__container__right__login
-        %i.fas.fa-sign-in-alt
-        LOGIN
-      .header__container__right__signin
-        %i.fas.fa-sign-in-alt
-        SIGNIN
+      - if user_signed_in?
+        = link_to destroy_user_session_path, method: :delete do
+          .header__container__right__login
+            %i.fas.fa-sign-in-alt
+            LOGOUT
+      - else
+        = link_to new_user_registration_path do
+          .header__container__right__login
+            %i.fas.fa-sign-in-alt
+            LOGIN
+        = link_to user_session_path do
+          .header__container__right__signin
+            %i.fas.fa-sign-in-alt
+            SIGNIN

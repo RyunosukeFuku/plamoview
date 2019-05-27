@@ -1,0 +1,44 @@
+.contents {
+  height: 100%;
+  width: 100%;
+  &__box {
+    height: 400px;
+    width: 500px;
+    margin: 0 auto;
+    &__header {
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      font-size: 20px;
+    }
+    .field {
+      font-size: 20px;
+      margin-bottom: 15px;
+      #user_name {
+        width: 260px;
+        border-radius: 5px;
+      }
+      #user_email {
+        width: 100%;
+        border-radius: 5px;
+      }
+      #user_password {
+        border-radius: 5px;
+      }
+    }
+    .actions {
+      text-align: center;
+      
+      .form-btn {
+        border: solid 1px;
+        border-radius: 7px;
+        border-color: lightgray;
+        height: 25px;
+        width: 130px;
+        cursor: pointer;
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
