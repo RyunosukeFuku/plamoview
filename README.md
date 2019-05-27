@@ -10,6 +10,7 @@
 |description|text|null: false|
 |like_count|integer|
 |category_id|integer|
+|user_id|integer|
 ### Association
 - belongs_to :category
 - belongs_to :user
