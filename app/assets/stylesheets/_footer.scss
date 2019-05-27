@@ -1,0 +1,69 @@
+.footer {
+  height: 200px;
+  width: 100%;
+  background-color: lightgray;
+  padding-top: 30px;
+  &__back {
+    width: 100px;
+    margin: 0 auto;
+    background-color: gray;
+    border: 2px solid gray;
+    border-radius: 20px;
+    color: #fff;
+    padding:4px 32px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+  }
+  &__back:hover {
+    background-color: #fff;
+    color: #55acee;
+  }
+  &__btn {
+    padding-top: 40px;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    .twitter {
+      background-color: skyblue;
+      border: 2px solid skyblue;
+      border-radius: 20px;
+      color: #fff;
+      padding:4px 32px;
+      -webkit-transition: all .3s;
+      transition: all .3s;
+      
+    }
+    .twitter:hover {
+      background-color: #fff;
+      color: #55acee;
+    }
+    .facebook {
+      background-color: blueviolet;
+      border: 2px solid blueviolet;
+      border-radius: 20px;
+      color: #fff;
+      padding:4px 32px;
+      -webkit-transition: all .3s;
+      transition: all .3s;
+      
+    }
+    .facebook:hover {
+      background-color: #fff;
+      color: #55acee;
+    }
+    .line {
+      background-color: #01b901;
+      border: 2px solid #01b901;
+      border-radius: 20px;
+      color: #fff;
+      padding:4px 32px;
+      -webkit-transition: all .3s;
+      transition: all .3s;
+      
+    }
+    .line:hover {
+      background-color: #fff;
+      color: #55acee;
+    }
+  }
+}
