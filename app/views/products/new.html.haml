@@ -3,14 +3,13 @@
   .new-product__box
     .new-product__box__main
       記事投稿
-    = form_with url: root_path, html: { class: "new-product__box__main__form" } do |f|
+    = form_for @product , html: { class: "new-product__box__main__form" } do |f|
       %p 記事タイトル
-      = f.text_area :text, maxlength: "20", name: "text", placeholder: "タイトルを入力してください", type: "text", class: 'new-product__box__main__form__title'
+      = f.text_area :name, maxlength: "20", placeholder: "タイトルを入力してください", type: "string", class: 'new-product__box__main__form__title'
       %p 画像
-      = f.file_field :photo, name: "photo", type: "file", class: 'new-product__box__main__form__photo'
+      = f.file_field :image, type: "file", class: 'new-product__box__main__form__photo'
       %p 記事文章
-      = f.text_area :text, maxlength: "150", name: "text", placeholder: "文章を入力してください", type: "text", class: 'new-product__box__main__form__text'
-      %p 日付入力
-      %input{type: "date", class: 'new-product__box__main__form__date' }
+      = f.text_area :description, maxlength: "150", placeholder: "文章を入力してください", type: "text", class: 'new-product__box__main__form__text'
+      
       = f.submit '投稿する', class: 'new-product__box__main__form__submit'
 = render partial: 'products/footer'
