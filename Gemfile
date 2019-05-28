@@ -78,3 +78,4 @@ gem "font-awesome-rails"
 gem 'rails-i18n'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
+gem 'mini_magick'
