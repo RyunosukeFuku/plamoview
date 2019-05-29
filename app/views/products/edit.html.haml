@@ -13,5 +13,6 @@
       = f.submit '更新する', class: 'new-product__box__main__form__submit'
       .new-product__box__main__form__delete
         = link_to '削除する',product_path(@product.id), method: :delete ,class: "new-product__box__main__form__delete__link"
-
+      .new-product__box__main__form__product-back
+        = link_to '戻る',product_path(@product.id), method: :get,class: "new-product__box__main__form__product-back__link"
 = render partial: 'products/footer'
