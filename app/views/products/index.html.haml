@@ -16,7 +16,9 @@
                   .main__body__center__item__box__name__user
                     = product.user.name
                 .main__body__center__item__box__like
-                  イイね ♡ 0
+                  = 'イイね ♡' + product.likes_count.to_s
+.kaminari
+  = paginate(@product)
 
 = render partial: 'products/btn'
 = render partial: 'products/footer'
