@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   
   def index
    @product = Product.all.order("created_at DESC").page(params[:page]).per(8)
+   @category = Category.all
   end
   
   def new
