@@ -11,7 +11,10 @@
         border: solid 2px;
         border-color: black;
         border-radius: 3px;
-        
+        &__link {
+          text-decoration:none ;
+          color: black;
+        }
         &__photo {
           height: 250px;
           width: 100%;
