@@ -64,3 +64,12 @@
 ### Association
 - belongs_to :product, counter_cache: :likes_count
 - belongs_to :user
+
+
+## categoriesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+### Association
+- has_many :products
