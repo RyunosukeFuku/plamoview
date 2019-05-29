@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show]
+  before_action :set_product, only: [:show,:edit,:update, :destroy]
   
   def index
   end
@@ -24,9 +24,27 @@ class ProductsController < ApplicationController
   end
   
   def show
-  
+  end
+
+  def edit
+  end
+
+  def update
+    if @product.user_id == current_user.id
+      @product.update(product_params)
+      redirect_to product_path(@product.id)
+    end
   end
   
+  def destroy
+    if @product.user_id == current_user.id
+      @product.destroy
+      redirect_to root_path
+    else
+      redirect_to action: 'show', controller: 'products'
+    end
+  end
+
   private
 
   def product_params
