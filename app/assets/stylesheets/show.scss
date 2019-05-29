@@ -13,9 +13,21 @@
     border-color: lightgray;
     position: relative;
     &__header {
-      height: 40px;
+      height: 45px;
       text-align: center;
-      font-size: 20px;
+      display: flex;
+      &__name{
+        width: 460px;
+        font-size: 20px;
+      }
+      &__btn {
+        font-size: 16px;
+        color: gray;
+        cursor: pointer;
+        &__string {
+          font-size: 12px;
+        }
+      }
     }
     &__main {
       height: 800px;
