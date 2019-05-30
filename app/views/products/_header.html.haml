@@ -6,6 +6,11 @@
       .header__container__left__category
         %i.fas.fa-place-of-worship
         CATEGORY
+        .header__container__left__category__box
+          %ul.header__container__left__category__box__level1
+          - @category.each do |category|
+            %li.header__container__left__category__box__level1__li
+              = link_to category.name, category_path(category.id)
     -# .header__container__center
     -#   = form_tag('/search', method: :get, class: "header__container__center__search", enforce_utf8: false ) do
     -#     %input.header__container__center__search__input{name: "keyword", placeholder: "検索ワードを入力してください", type: "search", value: ""}/

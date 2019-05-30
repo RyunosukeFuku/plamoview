@@ -1,0 +1,27 @@
+= render partial: 'products/header'
+.main
+  .main__body
+  - if @products.present?
+    .main__body__top
+      = @categories.name.to_s + '一覧'
+    .main__body__center
+      - @products.each do |product|
+        .main__body__center__item
+          = link_to product_path(product.id) ,class: 'main__body__center__item__link'do
+            .main__body__center__item__photo
+              = image_tag product.image.url , class: 'main__body__center__item__photo__big'
+            .main__body__center__item__box
+              .main__body__center__item__box__name
+                .main__body__center__item__box__name__product
+                  = product.name
+                .main__body__center__item__box__name__user
+                  = product.user.name
+              .main__body__center__item__box__like
+                = 'イイね ♡' + product.likes_count.to_s
+  - else
+    .main__body__top
+      = @categories.name.to_s + 'の投稿はありません'
+.kaminari
+  = paginate(@products)
+= render partial: 'products/btn'
+= render partial: 'products/footer'
