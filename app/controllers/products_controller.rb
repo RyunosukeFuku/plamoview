@@ -1,15 +1,13 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [ :show,:edit,:update, :destroy]
-  
+  before_action :set_product, only: [ :show, :edit,:update, :destroy]
+  before_action :set_category, only: [ :index, :show, :new, :edit, :update, :destroy, :category]
   def index
    @product = Product.all.order("created_at DESC").page(params[:page]).per(8)
-   @category = Category.all
   end
   
   def new
     if user_signed_in?
       @product = Product.new
-      #@categories = Category.ransack(parent_id_null: true).result
     else
       redirect_to new_user_registration_path
     end
@@ -26,6 +24,11 @@ class ProductsController < ApplicationController
   end
   
   def show
+  end
+  
+  def category
+    @categories = Category.find_by(id: params[:id])
+    @products = Product.where(category_id: @categories.id).page(params[:page]).per(8)
   end
 
   def edit
@@ -55,5 +58,9 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
+  end
+  
+  def set_category
+    @category = Category.all
   end
 end
