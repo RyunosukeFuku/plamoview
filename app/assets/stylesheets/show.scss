@@ -47,6 +47,7 @@
             width: 50%;
             font-size: 16px;
             font-weight: bold;
+            padding-left: 20px;
           }
           &__date {
             width: 50%;
@@ -54,9 +55,24 @@
             font-weight: 500;
           }
         }
+        &__bottom {
+          height: 40px;
+          display: flex;
+          margin-bottom: 20px;
+          &__category {
+            line-height: 35px;
+            padding-left: 20px;
+            font-size: 15px;
+            width: 200px;
+          }
+        }
         &__text {
           height: 100px;
           font-size: 14px;
+          border-top: solid 1px lightgray;
+          &__box {
+            margin-top: 10px;
+          }
         }
       }
     }
