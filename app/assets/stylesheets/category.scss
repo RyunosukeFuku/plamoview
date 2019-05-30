@@ -1,0 +1,16 @@
+.header__container__left__category__box {
+  position: relative;
+  display: none;
+  background: white;
+  &__level1 {
+    height: auto;
+    width: auto;
+    &__li {
+      list-style: none;
+      border-bottom: solid 0.5px gray;
+    }
+    &__li:hover {
+      background: skyblue;
+    }
+  }
+}

@@ -10,6 +10,7 @@
       = f.file_field :image, type: "file", class: 'new-product__box__main__form__photo'
       %p 記事文章
       = f.text_area :description, maxlength: "150", placeholder: "文章を入力してください", type: "text", class: 'new-product__box__main__form__text'
-      
+      %p カテゴリー選択
+      = f.select :category_id, @category.map{|t| [t.name, t.id]}, {}, class: 'new-product__box__main__form__category'
       = f.submit '投稿する', class: 'new-product__box__main__form__submit'
 = render partial: 'products/footer'

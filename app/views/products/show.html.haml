@@ -16,9 +16,11 @@
       .show-product__body__main__description
         .show-product__body__main__description__box
           .show-product__body__main__description__box__user
-            = @product.user.name
+            = '投稿者・' + @product.user.name.to_s
           .show-product__body__main__description__box__date
             = @product.created_at.strftime("%Y/%m/%d %H:%M")
+        .show-product__body__main__description__category
+          = '☆' + @product.category.name.to_s + '☆'
         .show-product__body__main__description__text
           = @product.description
 = render partial: 'products/footer'

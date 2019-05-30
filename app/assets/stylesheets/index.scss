@@ -1,6 +1,12 @@
 .main {
   width: 100%;
   &__body {
+    &__top {
+      height:50px;
+      font-size: 25px;
+      line-height: 50px;
+      text-align: center;
+    }
     &__center {
       margin: 20px 0 0 40px;
       display: inline-block;
