@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [ :show, :edit,:update, :destroy]
-  before_action :set_category, only: [ :index, :show, :new, :edit, :update, :destroy, :category]
+  before_action :set_category, only: [ :index, :show, :new, :create, :edit, :update, :destroy, :category]
   def index
    @product = Product.all.order("created_at DESC").page(params[:page]).per(8)
   end
