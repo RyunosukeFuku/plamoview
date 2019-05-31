@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
+    @product = Product.create(product_params)
     if @product.save
        redirect_to root_path ,notice: '記事が投稿されました'
      else
