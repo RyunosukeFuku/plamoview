@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [ :show, :edit,:update, :destroy]
-  before_action :set_category, only: [ :index, :show, :new, :create, :edit, :update, :destroy, :category]
+  before_action :set_category, only: [ :index, :show, :new, :create, :edit, :update, :destroy, :category, :userpage]
   def index
    @product = Product.all.order("created_at DESC").page(params[:page]).per(8)
   end
@@ -28,7 +28,11 @@ class ProductsController < ApplicationController
   
   def category
     @categories = Category.find_by(id: params[:id])
-    @products = Product.where(category_id: @categories.id).page(params[:page]).per(8)
+    @products = Product.where(category_id: @categories.id).order("created_at DESC").page(params[:page]).per(8)
+  end
+
+  def userpage
+    @products = current_user.products.order("created_at DESC").page(params[:page]).per(8)
   end
 
   def edit

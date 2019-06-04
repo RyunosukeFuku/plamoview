@@ -11,11 +11,12 @@
           - @category.each do |category|
             %li.header__container__left__category__box__level1__li
               = link_to category.name, category_path(category.id)
-    -# .header__container__center
-    -#   = form_tag('/search', method: :get, class: "header__container__center__search", enforce_utf8: false ) do
-    -#     %input.header__container__center__search__input{name: "keyword", placeholder: "検索ワードを入力してください", type: "search", value: ""}/
-    -#     %button.header__container__center__search__button
-    -#       %i.fas.fa-search.header__container__center__search__button__icon
+    .header__container__center
+      - if user_signed_in?
+        = link_to userpage_path(current_user.id) do
+          .header__container__center__box
+            %i.far.fa-address-book
+            = current_user.name 
     .header__container__right
       - if user_signed_in?
         = link_to destroy_user_session_path, method: :delete do
