@@ -16,11 +16,10 @@ class ProductsController < ApplicationController
   def create
     @product = Product.create(product_params)
     if @product.save
-       redirect_to root_path ,notice: '記事が投稿されました'
-     else
-       render :new
-     end
-     
+      redirect_to root_path ,notice: '記事が投稿されました'
+    else
+      render :new
+    end
   end
   
   def show

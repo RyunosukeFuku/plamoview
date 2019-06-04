@@ -7,5 +7,5 @@ class Product < ApplicationRecord
   
   validates :name, :description, :category_id, :image, :likes_count, presence: true
   validates :name, length: { maximum: 20 }
-  validates :name, length: { maximum: 150 }
+  validates :description, length: { maximum: 150 }
 end
