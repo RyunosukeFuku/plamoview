@@ -3,9 +3,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :products, dependent: :destroy
-  has_many :chats, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-  validates :name, presence: true
-  validates :email,  length: { maximum: 50 }
+  validates :name, :email, :encrypted_password, presence: true
+  validates :name, :email, uniqueness: true
+  validates :name, length: { maximum: 6 }
+  validates :email, length: { maximum: 50 }
+  validates :encrypted_password, length: { minimum: 6, maximum: 50 }
 end
