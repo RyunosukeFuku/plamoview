@@ -19,10 +19,10 @@ describe User do
       expect(user.errors[:encrypted_password]).to include("を入力してください")
     end
 
-    it "nameが7文字以上だと登録できない" do
-      user = build(:user, name: "nnnnnnn")
+    it "nameが21文字以上だと登録できない" do
+      user = build(:user, name: "n" * 21)
       user.valid?
-      expect(user.errors[:name]).to include("は6文字以内で入力してください")
+      expect(user.errors[:name]).to include("は20文字以内で入力してください")
     end
 
     it "emailが50文字以上だと登録できない" do
