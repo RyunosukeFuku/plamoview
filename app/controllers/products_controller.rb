@@ -23,7 +23,9 @@ class ProductsController < ApplicationController
   end
   
   def show
-    @likes = Like.find_by(user_id: current_user.id, product_id: @product.id)
+    if user_signed_in?
+      @likes = Like.find_by(user_id: current_user.id, product_id: @product.id)
+    end
   end
   
   def category
